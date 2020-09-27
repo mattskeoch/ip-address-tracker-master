@@ -4,43 +4,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="/dist/css/style.min.css">
-
-
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
 
 <body>
-  <h2>Search for any IP address or domain</h2>
-  <input type="text" id="inputIp" placeholder="Search for any IP address or domain">
-  <button id="button">Click here</button>
 
-<h4>Results</h4>
-  IP<p id="outputIp"></p>
-  CITY<p id="outputCity"></p>
-  Region<p id="outputRegion"></p>
- Post code <p id="outputPostcode"></p>
-  Country<p id="outputCountry"></p>
-  <p id="outputTimezone"></p>
-  <p id="outputIsp"></p>
-  <p id="error"></p>
+  <header class="header">
+    <h1 class="header__title">IP Address Tracker</h1>
+    <div class="header__form">
+      <label for="inputIp" class="form__label hidden" aria-hidden="false">Search for any IP address</label>
+      <input class="form__input" type="text" id="inputIp" placeholder="Search for any IP address or domain"
+        tabindex="1">
+      <button class="form__button" id="button" tabindex="2"><img src="/images/icon-arrow.svg" alt="Search"></button>
+    </div>    
+     <div class="header__error">
+      <p class="header__error-output" id="error"></p>
+      </div>
+  </header>
+
+  <main>
+    <section class="results-container">
+
+      <div class="results">
+        <h2 class="results__title" tabindex="3">IP Address</h2>
+        <p class="results__output" id="outputIp" ></p>
+      </div>
+      <div class="results">
+        <h2 class="results__title" tabindex="4">Location</h2>
+        <p class="results__output" id="outputCity"></p>
+        <p class="results__output" id="outputRegion"></p>
+        <p class="results__output" id="outputPostcode"></p>
+        <p class="results__output" id="outputCountry"></p>
+      </div>
+      <div class="results">
+        <h2 class="results__title" tabindex="5">Timezone</h2>
+        <p class="results__output" id="outputTimezone"></p>
+      </div>
+      <div class="results">
+        <h2 class="results__title" tabindex="6">ISP</h2>
+        <p class="results__output" id="outputIsp"></p>
+      </div>
+    </section>
+
+    <section class="map-container">
+      <div class="map" id="map"></div>
+
+    </section>
+
+  
+  </main>
+
+  <footer>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">MattSK</a>.
+    </div>
+  </footer>
 
 
 
-
-
-
-  <!-- Frontend Mentor Attribution -->
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
   <!-- Javascript Files -->
   <script src="/app/js/app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 </body>
 
 </html>

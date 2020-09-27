@@ -1,3 +1,4 @@
+// RESET CREDIT: https://github.com/hankchizljaw/modern-css-reset
 *,
 *::before,
 *::after {
@@ -21,7 +22,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: none;
+    font-family: 'Rubik', sans-serif;
     font-weight: none;
     line-height: 1;
 }
@@ -29,14 +30,9 @@ h6 {
 body {
     height: 100%;
     font-size: 100%;
-    font-family: none;
+    font-family: 'Rubik', sans-serif;
     line-height: 1;
-    background-color: none;   
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    background-color: none;     
 }
 
 p {
@@ -78,14 +74,6 @@ picture {
     display: block;
 }
 
-.wrapper {
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
 /* Blur images when they have no alt attribute */
 img:not([alt]) {
     filter: blur(10px);
@@ -115,8 +103,10 @@ img:not([alt]) {
 .attribution {
     font-size: 11px;
     text-align: center;
+    background-color: rgb(76,82,178);
+    padding: 5px 0;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: $white;
 }

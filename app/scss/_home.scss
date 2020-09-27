@@ -1,7 +1,184 @@
-#app {
-    padding: 100px; 
+header.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    height: 35vh;
+    background-image: url(/images/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h1.header__title {
+        font-size: $large;
+        color: $white;
+        font-weight: $semiBold;
+        letter-spacing: 0.05em;
+        margin: 2.188rem 0;
+    }
+
+    .header__error{
+        margin-top: 30px;
+
+        p.header__error-output {
+            color: white;
+            font-weight: $semiBold;       
+            
+            a{
+                color: white;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
-p{
-    line-height: 1.5em;
+.header__form {
+    display: flex;
+    flex-direction: row;
+    max-width: 34.375rem;
+    width: 100%;
+    @media screen and (max-width: 64rem) {          
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;            
+    }
+
+    .form__input {
+        width: 100%;
+        padding: 1.25rem 1.563rem;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        cursor: pointer;
+        z-index: 3;
+
+        &:focus {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+    }
+
+    .form__input::placeholder {
+        color: $gray;
+        font-size: $medium;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        @media screen and (max-width: 64rem) {          
+            font-size: $small;        
+        }
+    }
+
+    button.form__button {
+        background-color: $black;
+        padding: 1.25rem 1.563rem;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        transition: background-color 200ms ease-in-out;
+        z-index: 3;
+
+        &:hover {
+            background-color: $darkGray;
+            cursor: pointer;
+        }
+    }
 }
+
+section.results-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 69.375rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: -100px;
+    padding: 30px 35px;
+    background-color: $white;
+    border-radius: 15px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    z-index: 3; 
+    
+    @media screen and (max-width: 64rem) {
+        flex-direction: column;  
+        margin-top: -110px;       
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        width: auto;   
+        padding: 1rem 0;        
+    }
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 110px;
+    height: 100%;       
+    width: 280px;  
+    @media screen and (max-width: 64rem) {
+        width: auto;   
+        min-height: 100%;   
+        margin-top: 0.8rem; 
+        margin-bottom: 0.5rem 
+    }   
+
+    h2.results__title {
+        color: $gray;
+        font-size: $small;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.2rem;    
+        @media screen and (max-width: 64rem) {           
+           text-align: center;  
+           margin-bottom: 0.8rem;             
+        }    
+    }
+
+    p.results__output {
+        color: $darkGray;
+        font-size: $large;
+        font-weight: $semiBold;
+        line-height: 1em;
+        word-break: break-all;
+        @media screen and (max-width: 64rem) {
+            font-size: $medium;
+            text-align: center;         
+         }   
+    }
+}
+
+.results:after{
+    content: '';
+    height: 65%; 
+    width: 1px;
+    margin-right: 30px;
+    margin-left: 30px;
+    position: absolute;
+        right: 0;
+        top: 33px; // If you want to set a smaller height and center it, change this value
+    background-color: $lightGray; 
+    @media screen and (max-width: 64rem) {
+        display: none;       
+    }
+}
+
+.results:last-of-type::after{
+    content: none;
+}
+
+
+section.map-container{  
+    position: relative;    
+    margin-top: -100px;   
+    z-index: 1;  
+    @media screen and (max-width: 64rem) {          
+       margin-top: -280px;            
+    }
+}
+
+#map {
+    height: 70vh;
+    z-index: 3;
+    @media screen and (max-width: 64rem) {          
+        height: 80vh;           
+     }
+}
+
